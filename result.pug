@@ -1,0 +1,21 @@
+doctype html
+html
+  head
+    title Quiz Result
+  body
+    h1 Your Result
+    p You scored #{score} out of 100 for this quiz.
+    p Total questions: #{total}
+
+    // Display the appropriate message based on the score
+    if score == 100
+      p Congratulations! Perfect score!
+    else if score >= 80
+      p Congratulations! Great job!
+    else if score >= 50
+      p Congratulations! You passed!
+    else
+      p Keep trying! You can do it next time!
+
+    // Link to go back to the quizzes page
+    a(href="/quizzes") Back to Quizzes

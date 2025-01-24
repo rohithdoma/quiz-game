@@ -1,0 +1,24 @@
+doctype html
+html
+  head
+    title Quiz Interface
+  body
+    .container
+      h1 Quiz: #{quiz.name}
+      form(action=`/quiz/${quiz.id}/submit`, method="POST" class="quiz-form")
+        each question in questions
+          fieldset
+            legend #{question.question}
+            label
+              input(type="radio", name=`answer_${question.id}`, value=question.option_a) 
+              | #{question.option_a}
+            label
+              input(type="radio", name=`answer_${question.id}`, value=question.option_b)
+              | #{question.option_b}
+            label
+              input(type="radio", name=`answer_${question.id}`, value=question.option_c)
+              | #{question.option_c}
+            label
+              input(type="radio", name=`answer_${question.id}`, value=question.option_d)
+              | #{question.option_d}
+        button(type="submit") Submit Answers

@@ -1,0 +1,12 @@
+doctype html
+html
+  head
+    title #{question.question}
+  body
+    h1 #{question.question}
+    form(action="/quiz/" + question.quiz_id + "/submit", method="POST")
+      each option, index in [question.option_a, question.option_b, question.option_c, question.option_d]
+        label
+          input(type="radio", name="answer_" + question.id, value=option, required)
+          | #{option}
+    button(type="submit") Submit

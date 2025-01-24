@@ -1,0 +1,11 @@
+doctype html
+html
+  head
+    title Quizzes List
+  body
+    h1 Quizzes
+    each quiz in quizzes
+      div
+        h2
+          a(href='/quiz/' + quiz.id) #{quiz.name}
+        p Quiz ID: #{quiz.id}
